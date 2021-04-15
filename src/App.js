@@ -36,8 +36,8 @@ function App() {
     const completeTaskHandler = function (task) {
         const newTasks = [...data];
         const taskIndex = newTasks.findIndex(item => item.id === task.id);
-        console.log("Task to remove index: " + taskIndex);
-        newTasks.splice(taskIndex, 1)
+        //console.log("Task to remove index: " + taskIndex);
+        newTasks.splice(taskIndex, 1);
         setData(newTasks);
     }
 
@@ -56,6 +56,10 @@ function App() {
         {data.map(item => <Task key={item.id} task={item} onClickHandler={completeTaskHandler}/>)}
 
         <TaskForm onNewTask={onNewTaskHandler}/>
+
+        <footer style={{marginTop: "5%"}}>
+            <a href={"https://github.com/michalcernota/react"}>GitHub</a>
+        </footer>
     </div>
   );
 }
